@@ -1,0 +1,5 @@
+artifact_bucket            = "ngem-ops-artifacts-699300400344"
+infra_backend_bucket       = "ngem-ops-infra-test"
+infra_dynamodb_table       = "ngem-ops-infra-remote-state-test"
+development_aws_account_id = "348542648035"
+development_account_iam_role = "ngem-api-ops-dest-cross-account-dev-role"

@@ -1,0 +1,6 @@
+# cluster_arn = ""
+# aws_msk_multi_connection_sg = ""
+# private_subnet_tag_key_name   = "type"
+# private_subnet_tag_value_name = "private"
+# public_subnet_tag_key_name    = "type"
+# public_subnet_tag_value_name  = "public"

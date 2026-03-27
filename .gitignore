@@ -1,0 +1,16 @@
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars.backup
+.terraform.lock.hcl
+
+# terraform ignore (global)
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# optional
+crash.log
+override.tf
+override.tf.json

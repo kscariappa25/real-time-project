@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_TAG: latest
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - apt-get update
+      - apt-get install -y docker.io
+  pre_build:
+    commands:
+      - echo Logging into ECR...
+      - AWS_ACCOUNT_ID=$(echo $CODEBUILD_BUILD_ARN | cut -d ':' -f5)
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME
+
+      - aws ecr get-login-password --region $AWS_REGION \
+        | docker login --username AWS --password-stdin $REPOSITORY_URI
+
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+
+  build:
+    commands:
+      - echo Building Docker image...
+      - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
+
+  post_build:
+    commands:
+      - echo Pushing Docker image...
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+
+      - echo Creating imagedefinitions.json...
+      - printf '[{"name":"producer","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > producer-imagedefinitions.json
+
+artifacts:
+  files:
+    - producer-imagedefinitions.json

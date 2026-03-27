@@ -1,0 +1,7 @@
+source_aws_accountid                   = "699300400344"
+source_aws_role_name                   = "ngem-api-ops-source-cross-account-dev"
+destination_cross_account_name         = "ngem-api-ops-dest-cross-account-dev"
+source_dynamodb_table_name             = "ngem-ops-infra-remote-state-test"
+source_code_aws_role_name              = "ngem-api-ops-codebuild-manager-role"
+source_account_kms_id                  = ""
+source_account_producer_s3_bucket_name = "ngem-ops-artifacts-699300400344"
