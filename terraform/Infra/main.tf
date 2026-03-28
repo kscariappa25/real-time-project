@@ -89,7 +89,7 @@ module "ngem_api_msk_privatelink" {
 
 module "ngem_api_msk_vpc_endpoint" {
   source    = "../modules/vpc-endpoint"
-  providers = { aws = aws.development_account }
+  providers = { aws = aws.development_account_us-west-2 }
 
   name                  = var.msk_cluster_name
   endpoint_service_name = module.ngem_api_msk_privatelink.endpoint_service_name

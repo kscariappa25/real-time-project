@@ -1,5 +1,8 @@
 data "aws_vpc" "dev_vpc" {
-  default = true
+  filter {
+    name   = "tag:Name"
+    values = ["ngem-api-dev-vpc-us-west-2"]
+  }
 }
 
 data "aws_subnets" "dev_private_subnets" {
