@@ -47,9 +47,9 @@ global_tags = {
   "nextgen.automation"  = "true"
 }
 
-sandbox_vpc_id             = "<SANDBOX_VPC_ID>"
-sandbox_private_subnet_ids = ["<subnet-id-1>", "<subnet-id-2>"]
+sandbox_vpc_id             = "vpc-012fe7cf3b1b367b0"
+sandbox_private_subnet_ids = ["subnet-060aa15b03f4499e9", "subnet-064e61fc749b23d3a"]
 msk_broker_ips_ports = [
-  { ip = "<broker-1-ip>", port = "9098" },
-  { ip = "<broker-2-ip>", port = "9098" }
+  { ip = "172.31.6.77", port = "9098" },
+  { ip = "172.31.37.155", port = "9098" }
 ]
