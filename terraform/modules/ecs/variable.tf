@@ -46,7 +46,7 @@ variable "certificate_id" {
 }
 
 variable "destination_account_id" {
-  type = number
+  type = string
 }
 
 variable "source_account_id" {
@@ -84,7 +84,7 @@ variable "otel_container_repo_name" {
 }
 
 variable "sandbox_aws_account_id" {
-  type = number
+  type = string
 }
 
 variable "eks_cluster_security_group_id" {
