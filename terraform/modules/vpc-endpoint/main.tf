@@ -13,6 +13,10 @@ data "aws_subnets" "dev_private_subnets" {
     name   = "tag:type"
     values = ["private"]
   }
+  filter {
+    name   = "availabilityZone"
+    values = ["us-west-2b"]
+  }
 }
 resource "aws_security_group" "endpoint_sg" {
   name   = "${var.name}-endpoint-sg"
