@@ -1,5 +1,5 @@
 locals {
-  github_connection_arn = "arn:aws:codeconnections:ap-south-1:699300400344:connection/9bf92c5d-944c-4fd1-ab9d-b0731c389d57"
+  github_connection_arn = "arn:aws:codeconnections:us-east-1:699300400344:connection/b85083b2-1e16-4d7c-8bfc-8aab00ec8b54"
 }
 
 module "app_ecr_repo" {

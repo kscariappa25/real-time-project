@@ -1,15 +1,13 @@
 provider "aws" {
-  region  = "us-east-1"
-  profile = "kirtan"
+  region = "us-east-1"
 }
 terraform {
   backend "s3" {
-    bucket       = "ngem-ops-infra-test"
-    key          = "ngem-api-prj/infra/terraform/dev/integration/producer-api/state/core.tfstate"
-    region       = "us-east-1"
-    encrypt      = true
-    use_lockfile = true
-    profile      = "kirtan"
+    bucket         = "ngem-ops-artifacts-699300400344"
+    key            = "ngem-api-prj/infra/terraform/dev/integration/producer-api/state/core.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "ngem-ops-infra-remote-state"
   }
   required_providers {
     aws = {
