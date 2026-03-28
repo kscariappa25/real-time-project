@@ -65,16 +65,16 @@ variable "certificate_id" {
   default = ""
 }
 variable "destination_account_id" {
-  type = number
+  type = string
 }
 variable "development_aws_account_id" {
-  type = number
+  type = string
 }
 variable "source_account_id" {
-  type = number
+  type = string
 }
 variable "sandbox_aws_account_id" {
-  type = number
+  type = string
 }
 variable "dt_aws_account_id" {
   type    = string
